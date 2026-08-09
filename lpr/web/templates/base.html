@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}License Plate Recognition{% endblock %}</title>
+	<link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+	<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+	<style>
+		body { padding: 1.5rem; }
+		.plate-thumb { max-width: 220px; height: auto; }
+		.plate-fa { font-size: 1.25rem; font-weight: 700; direction: rtl; }
+		.stream { width: 100%; max-width: 900px; border: 1px solid #333; }
+		.search-bar { gap: .5rem; flex-wrap: wrap; }
+		.search-bar .form-control { max-width: 220px; }
+	</style>
+	{% block head %}{% endblock %}
+</head>
+<body>
+	<h1 class="text-center mb-4">{% block heading %}License Plate Recognition{% endblock %}</h1>
+
+	<form class="d-flex search-bar justify-content-center mb-4"
+	      method="get" action="{{ url_for('search') }}">
+		<input name="plate" type="text" placeholder="Plate (e.g. 12PwD35373)" class="form-control">
+		<input name="start" type="text" placeholder="Start: YYYY-MM-DD HH-MM" class="form-control">
+		<input name="end" type="text" placeholder="End: YYYY-MM-DD HH-MM" class="form-control">
+		<button type="submit" class="btn btn-success">Search</button>
+	</form>
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<div class="alert alert-warning text-center">
+				{% for message in messages %}<div>{{ message }}</div>{% endfor %}
+			</div>
+		{% endif %}
+	{% endwith %}
+
+	{% block content %}{% endblock %}
+
+	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+	{% block scripts %}{% endblock %}
+</body>
+</html>

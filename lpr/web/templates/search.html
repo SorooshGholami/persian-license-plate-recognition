@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Search Plates{% endblock %}
+{% block heading %}Search Captured Plates{% endblock %}
+
+{% block content %}
+	{% if captures %}
+		<p class="text-muted">{{ captures | length }} result(s).</p>
+		<table class="table table-striped align-middle">
+			<thead>
+				<tr>
+					<th scope="col">Date</th>
+					<th scope="col">Plate</th>
+					<th scope="col">Cropped</th>
+					<th scope="col">OCR</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for capture in captures %}
+				<tr>
+					<td>{{ capture.date }}</td>
+					<td>{{ capture.text }}</td>
+					<td>
+						{% if capture.plate_image %}
+						<img class="plate-thumb" alt="cropped plate"
+						     src="data:image/jpeg;base64,{{ capture.plate_image }}">
+						{% endif %}
+					</td>
+					<td>
+						{% if capture.ocr_image %}
+						<img class="plate-thumb" alt="ocr result"
+						     src="data:image/jpeg;base64,{{ capture.ocr_image }}">
+						{% endif %}
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p class="text-center text-muted">
+			No results. Search by plate text, by date range, or both.
+		</p>
+	{% endif %}
+
+	<p class="text-center"><a href="{{ url_for('index') }}">&larr; Back to live view</a></p>
+{% endblock %}

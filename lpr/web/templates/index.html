@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Live Recognition{% endblock %}
+{% block heading %}Live License Plate Recognition{% endblock %}
+
+{% block head %}
+	<script src="{{ url_for('static', filename='socket.io.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+	<div class="text-center mb-4">
+		<h3>Camera Stream</h3>
+		<img class="stream" src="{{ url_for('video_feed') }}" alt="Camera stream">
+	</div>
+
+	<h3>Recent Plates</h3>
+	<table id="plates" class="table table-striped align-middle">
+		<thead>
+			<tr>
+				<th scope="col">Date</th>
+				<th scope="col">Plate</th>
+				<th scope="col">Persian</th>
+				<th scope="col">Cropped</th>
+				<th scope="col">OCR</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for capture in captures %}
+			<tr>
+				<td>{{ capture.date }}</td>
+				<td>{{ capture.text }}</td>
+				<td class="plate-fa"></td>
+				<td>
+					{% if capture.plate_image %}
+					<img class="plate-thumb" alt="cropped plate"
+					     src="data:image/jpeg;base64,{{ capture.plate_image }}">
+					{% endif %}
+				</td>
+				<td>
+					{% if capture.ocr_image %}
+					<img class="plate-thumb" alt="ocr result"
+					     src="data:image/jpeg;base64,{{ capture.ocr_image }}">
+					{% endif %}
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+	$(document).ready(function () {
+		var socket = io();
+		var limit = {{ count_limit }};
+
+		socket.on('create_event', function (msg) {
+			var row = $('<tr>');
+			row.append($('<td>').text(msg.date));
+			row.append($('<td>').text(msg.plate));
+			row.append($('<td>').addClass('plate-fa').text(msg.plate_fa || ''));
+			row.append($('<td>'));
+			row.append($('<td>'));
+
+			$('#plates > tbody').prepend(row);
+
+			var rows = $('#plates > tbody > tr');
+			if (rows.length > limit) {
+				rows.last().remove();
+			}
+		});
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,62 @@
+THIRD-PARTY NOTICES
+
+This project is licensed proprietarily (see LICENSE), but it builds on the
+third-party software listed below. Those components remain under their own
+licences, and nothing in LICENSE restricts your rights in them.
+
+
+1. TensorFlow Model Garden / Object Detection API
+   https://github.com/tensorflow/models
+   Copyright The TensorFlow Authors
+   Licensed under the Apache License, Version 2.0
+
+   This repository does not redistribute the Object Detection API. It is
+   fetched separately at setup time into third_party/tensorflow_models/ (see
+   README.md). If you ever do vendor it into a distribution, you must retain
+   its LICENSE file and its own NOTICE.
+
+
+2. TensorFlow / Keras
+   https://github.com/tensorflow/tensorflow
+   Apache License, Version 2.0
+
+
+3. OpenCV (opencv-python)
+   https://github.com/opencv/opencv-python
+   Apache License, Version 2.0 (4.5.0 and later)
+
+
+4. Other Python dependencies
+
+   NumPy (BSD-3-Clause), Pillow (MIT-CMU), pandas (BSD-3-Clause),
+   scikit-learn (BSD-3-Clause), matplotlib (PSF-based), imutils (MIT),
+   Flask (BSD-3-Clause), Flask-SocketIO (MIT), protobuf (BSD-3-Clause),
+   tf-slim (Apache-2.0), pycocotools (BSD-2-Clause),
+   arabic-reshaper (MIT), python-bidi (LGPL-3.0),
+   mysql-connector-python (GPL-2.0 with FOSS License Exception).
+
+   Consult each project for its authoritative licence text.
+
+   Note on mysql-connector-python: it is GPL-2.0 licensed. It is used here
+   only as an optional runtime dependency that this project imports through
+   its public API and does not redistribute. If you plan to ship a combined
+   binary, review Oracle's FOSS License Exception or switch to a
+   permissively licensed driver such as PyMySQL (MIT).
+
+
+5. Front-end assets bundled under lpr/web/static/
+
+   Bootstrap  - MIT License        - https://getbootstrap.com
+   jQuery     - MIT License        - https://jquery.com
+   Socket.IO  - MIT License        - https://socket.io
+
+
+6. Datasets
+
+   Character recognition was trained on the Iranis dataset:
+   https://github.com/mut-deep/IRANIS-dataset
+   Consult the dataset's own terms before redistributing it or any model
+   trained on it. The dataset itself is NOT included in this repository.
+
+   The vehicle photographs used for detection training were collected by the
+   project owner and are not included in this repository.

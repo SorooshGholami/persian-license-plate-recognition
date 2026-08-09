@@ -1,0 +1,98 @@
+PROPRIETARY SOFTWARE LICENSE
+All Rights Reserved
+
+Copyright (c) 2022-2026 Soroosh Gholami. All rights reserved.
+
+
+1. DEFINITIONS
+
+   "Software" means the source code, scripts, configuration files, trained
+   model weights, datasets, documentation, and any other material in this
+   repository, excluding the third-party components listed in the NOTICE
+   file.
+
+   "Owner" means the copyright holder named above.
+
+   "You" means any individual or legal entity accessing the Software.
+
+
+2. GRANT OF RIGHTS
+
+   NONE.
+
+   No licence, right, or permission of any kind is granted to You by this
+   document. All rights in the Software are reserved exclusively by the
+   Owner.
+
+   Making the Software readable at a public URL does not place it in the
+   public domain, does not make it open source, and does not grant any
+   implied licence.
+
+
+3. PROHIBITED WITHOUT PRIOR WRITTEN PERMISSION
+
+   You may NOT, in whole or in part:
+
+   (a) use, run, or execute the Software for any purpose, whether personal,
+       academic, commercial, or otherwise;
+   (b) copy, reproduce, download, or store the Software beyond the transient
+       copy your browser makes while viewing it;
+   (c) modify, adapt, translate, or create derivative works from it;
+   (d) distribute, publish, sublicense, sell, rent, lease, or otherwise
+       transfer it to any third party;
+   (e) incorporate it, or any portion of it, into another work or product,
+       including any open-source project;
+   (f) use it to train, fine-tune, evaluate, or otherwise develop any machine
+       learning model, dataset, or artificial intelligence system;
+   (g) reverse engineer, decompile, or disassemble any compiled artefact;
+   (h) remove, obscure, or alter this licence or any copyright notice.
+
+
+4. HOW TO OBTAIN PERMISSION
+
+   Permission must be granted by the Owner in writing, in advance, and is
+   specific to the person, purpose, and scope stated in that grant. Any use
+   beyond that scope is unlicensed.
+
+   Requests: soroosh1267@gmail.com
+
+   Silence is not consent. An unanswered request is a refusal.
+
+
+5. THIRD-PARTY COMPONENTS
+
+   This project depends on the TensorFlow Object Detection API and other
+   third-party software, which are licensed separately by their own owners
+   and are NOT covered by this licence. See the NOTICE file. Nothing here
+   restricts your rights in those components.
+
+
+6. NO WARRANTY
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, AND
+   NONINFRINGEMENT.
+
+
+7. LIMITATION OF LIABILITY
+
+   IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+   FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+   The Software performs automated recognition of vehicle license plates.
+   You alone are responsible for ensuring that any use complies with the
+   privacy, data-protection, and surveillance laws of your jurisdiction.
+
+
+8. TERMINATION
+
+   Any breach of this licence terminates all permissions previously granted,
+   automatically and without notice.
+
+
+9. NO WAIVER
+
+   The Owner's failure to enforce any provision is not a waiver of the right
+   to enforce it later.

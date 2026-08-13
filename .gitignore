@@ -1,0 +1,25 @@
+# Local configuration and secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Runtime output
+outputs/
+*.log
+
+# Large generated data (rebuild with scripts/generate_tfrecord.py)
+data/records/*.record
+
+# Training checkpoints written mid-run
+models/ocr/VGG_epoch-*.h5
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
